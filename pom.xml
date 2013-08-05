@@ -39,8 +39,8 @@
 	</dependencies>
 
 	<build>
-<!-- 		<sourceDirectory>src/main/groovy</sourceDirectory> -->
-<!-- 		<testSourceDirectory>src/test/groovy</testSourceDirectory> -->
+		<sourceDirectory>src/main/groovy</sourceDirectory>
+		<testSourceDirectory>src/test/groovy</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>

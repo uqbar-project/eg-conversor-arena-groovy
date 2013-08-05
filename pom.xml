@@ -18,11 +18,11 @@
 	</parent>
 
 	<dependencies>
-		<!-- <dependency> -->
-		<!-- <groupId>org.codehaus.groovy.maven.runtime</groupId> -->
-		<!-- <artifactId>gmaven-runtime-1.6</artifactId> -->
-		<!-- <version>1.0</version> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.codehaus.gmaven.runtime</groupId>
+			<artifactId>gmaven-runtime-2.0</artifactId>
+			<version>1.5</version>
+		</dependency>
 
 		<dependency>
 			<groupId>uqbar</groupId>
@@ -42,54 +42,17 @@
 		<sourceDirectory>src/main/groovy</sourceDirectory>
 		<testSourceDirectory>src/test/groovy</testSourceDirectory>
 		<plugins>
-			<!-- <plugin> -->
-			<!-- <groupId>org.codehaus.mojo</groupId> -->
-			<!-- <artifactId>build-helper-maven-plugin</artifactId> -->
-			<!-- <version>1.8</version> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <id>add-source</id> -->
-			<!-- <phase>generate-sources</phase> -->
-			<!-- <goals> -->
-			<!-- <goal>add-source</goal> -->
-			<!-- </goals> -->
-			<!-- <configuration> -->
-			<!-- <sources> -->
-			<!-- <source>src/main/groovy</source> -->
-			<!-- </sources> -->
-			<!-- </configuration> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
-
-			<!-- <plugin> -->
-			<!-- <groupId>org.apache.maven.plugins</groupId> -->
-			<!-- <artifactId>maven-eclipse-plugin</artifactId> -->
-			<!-- <configuration> -->
-			<!-- <additionalProjectnatures> -->
-			<!-- <projectnature>org.codehaus.groovy.eclipse.groovyNature</projectnature> -->
-			<!-- </additionalProjectnatures> -->
-			<!-- <additionalBuildcommands> -->
-			<!-- <buildcommand>org.codehaus.groovy.eclipse.groovyBuilder</buildcommand> -->
-			<!-- </additionalBuildcommands> -->
-			<!-- </configuration> -->
-			<!-- </plugin> -->
-
-			<!-- <plugin> -->
-			<!-- <groupId>org.codehaus.groovy.maven</groupId> -->
-			<!-- <artifactId>gmaven-plugin</artifactId> -->
-			<!-- <version>1.0</version> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <goals> -->
-			<!-- <goal>generateStubs</goal> -->
-			<!-- <goal>compile</goal> -->
-			<!-- <goal>generateTestStubs</goal> -->
-			<!-- <goal>testCompile</goal> -->
-			<!-- </goals> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
+			<plugin>
+				<groupId>org.codehaus.gmaven</groupId>
+				<artifactId>gmaven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

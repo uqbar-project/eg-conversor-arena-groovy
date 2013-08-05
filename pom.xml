@@ -19,9 +19,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.codehaus.gmaven.runtime</groupId>
-			<artifactId>gmaven-runtime-2.0</artifactId>
-			<version>1.5</version>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>build-helper-maven-plugin</artifactId>
+			<version>1.8</version>
 		</dependency>
 
 		<dependency>
@@ -38,22 +38,22 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<sourceDirectory>src/main/groovy</sourceDirectory>
-		<testSourceDirectory>src/test/groovy</testSourceDirectory>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.gmaven</groupId>
-				<artifactId>gmaven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+	<!-- <build> -->
+	<!-- <sourceDirectory>src/main/groovy</sourceDirectory> -->
+	<!-- <testSourceDirectory>src/test/groovy</testSourceDirectory> -->
+	<!-- <plugins> -->
+	<!-- <plugin> -->
+	<!-- <groupId>org.codehaus.gmaven</groupId> -->
+	<!-- <artifactId>gmaven-plugin</artifactId> -->
+	<!-- <executions> -->
+	<!-- <execution> -->
+	<!-- <goals> -->
+	<!-- <goal>compile</goal> -->
+	<!-- </goals> -->
+	<!-- </execution> -->
+	<!-- </executions> -->
+	<!-- </plugin> -->
+	<!-- </plugins> -->
+	<!-- </build> -->
 
 </project>

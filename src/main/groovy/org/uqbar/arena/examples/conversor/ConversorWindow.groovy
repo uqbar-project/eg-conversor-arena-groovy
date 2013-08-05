@@ -32,58 +32,54 @@ class ConversorWindow extends MainWindow<Conversor> {
 	 * 
 	 * COMO FUNCIONA EL PROYECTO
 	 * 1) COnvert to Maven project
-		2) maven install
-		3) Convert to groovy project
+	 2) maven install
+	 3) Convert to groovy project
 	 */
-  ConversorWindow() {
-    super(new Conversor())
-  }
+	ConversorWindow() {
+		super(new Conversor())
+	}
 
-  @Override
-  void createContents(Panel mainPanel) {
-    title = "Conversor de millas a kilómetros"
+	@Override
+	void createContents(Panel mainPanel) {
+		mainPanel.with {
+			layout = new VerticalLayout()
+			new Label(it).with { //
+				text = "Ingrese la longitud en millas" //
+			}
+			new TextBox(it).with { //
+				bindValueToProperty("millas") //
+			}
+			new Button(it).with {
+				caption = "Convertir a kilómetros"
+				onClick(new MessageSend(this.getModelObject(), "convertir"))
+			}
+			new Label(it).with {
+				background = Color.ORANGE
+				bindValueToProperty("kilometros")
+			}
+			new Label(it).with {  text = " kilómetros"  }
+		}
 
-	this.setTitle("Conversor de millas a kilómetros (Groovy)")
-	mainPanel.setLayout(new VerticalLayout())
+		/** Opción 2 */
+		/**
+		 title = "Conversor de millas a kilómetros"
+		 this.setTitle("Conversor de millas a kilómetros (Groovy)")
+		 mainPanel.setLayout(new VerticalLayout())
+		 new Label(mainPanel).setText("Ingrese la longitud en millas")
+		 new TextBox(mainPanel).bindValueToProperty("millas")
+		 new Button(mainPanel)
+		 .setCaption("Convertir a kilómetros en Groovy")
+		 .onClick(new MessageSend(this.getModelObject(), "convertir"))
+		 new Label(mainPanel)
+		 .setBackground(Color.ORANGE)
+		 .bindValueToProperty("kilometros")
+		 new Label(mainPanel).setText(" kilómetros")
+		 */
 
-	new Label(mainPanel).setText("Ingrese la longitud en millas")
+	}
 
-	new TextBox(mainPanel).bindValueToProperty("millas")
+	static void main(String[] args) {
+		new ConversorWindow().startApplication()
+	}
 
-	new Button(mainPanel)
-		.setCaption("Convertir a kilómetros en Groovy")
-		.onClick(new MessageSend(this.getModelObject(), "convertir"))
-
-	new Label(mainPanel)
-		.setBackground(Color.ORANGE)
-		.bindValueToProperty("kilometros")
-
-	new Label(mainPanel).setText(" kilómetros")
-
-//    mainPanel.with {
-//        layout = new VerticalLayout()      
-//        new Label(it).with { //
-//          text = "Ingrese la longitud en millas" //
-//        }
-//        new TextBox(it).with { //
-//          bindValueToProperty("millas") //
-//        }
-//        new Button(it).with {
-//          caption = "Convertir a kilómetros"
-//          onClick(action { this.modelObject.convertir() }) 
-//        }
-//        new Label(it).with {
-//          background = Color.ORANGE
-//          bindValueToProperty("kilometros")
-//        }
-//        new Label(it).with { //
-//          text = " kilómetros" //
-//        }
-//    }
-  }
-
-  static void main(String[] args) {
-    new ConversorWindow().startApplication()
-  }
-  
 }

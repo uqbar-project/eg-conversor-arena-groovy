@@ -28,6 +28,13 @@ import org.uqbar.arena.windows.MainWindow
  */
 class ConversorWindow extends MainWindow<Conversor> {
 
+	/**
+	 * 
+	 * COMO FUNCIONA EL PROYECTO
+	 * 1) COnvert to Maven project
+		2) maven install
+		3) Convert to groovy project
+	 */
   ConversorWindow() {
     super(new Conversor())
   }

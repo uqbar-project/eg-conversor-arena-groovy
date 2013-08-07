@@ -9,6 +9,7 @@ import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.Panel
 import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.windows.MainWindow
+import org.uqbar.lacar.ui.model.Action
 /**
  * Ejemplo de conversor de medidas con el framework Arena. Es una ventana que tiene como modelo una instancia
  * de la clase {@link Conversor}.
@@ -49,9 +50,28 @@ class ConversorWindow extends MainWindow<Conversor> {
 			new TextBox(it).with { //
 				bindValueToProperty("millas") //
 			}
-			new Button(it).with {
+			def button = new Button(it).with {
 				caption = "Convertir a kilómetros"
-				onClick(new MessageSend(this.getModelObject(), "convertir"))
+			// OPCION 1
+			// Se trabaja el onClick con un adapter
+			// que mapea objeto receptor, mensaje como un string
+			// desventaja: no tiene validación de tipos
+			// es fácil escribir "conevrtir" y eso no se chequea
+			// onClick(new MessageSend(this.modelObject, "convertir"))
+			
+			// OPCION 2
+			// Se trabaja con una inner class
+			// al estilo "Java". 
+			// Desventaja: es muy verboso, y requiere indentar
+			// bien para poder seguir el scope
+			// onClick(new Action() { 
+			//	void execute() { 
+			//		this.modelObject.convertir() 
+			//	}
+			//})
+			// OPCION 3, generamos un closure y lo casteamos a una action
+			// que implementa un solo método: execute() en este caso
+			onClick({ this.modelObject.convertir() } as Action)
 			}
 			new Label(it).with {
 				background = Color.ORANGE

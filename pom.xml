@@ -18,18 +18,24 @@
 	</parent>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>build-helper-maven-plugin</artifactId>
-			<version>1.8</version>
-		</dependency>
-
+		<!-- UQBAR -->
 		<dependency>
 			<groupId>uqbar</groupId>
 			<artifactId>arena-jface</artifactId>
 			<version>${arena-version}</version>
 		</dependency>
-
+		<!-- /UQBAR -->
+		
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>build-helper-maven-plugin</artifactId>
+			<version>1.8</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -64,6 +70,21 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
+			
+				<plugin>
+		            <groupId>org.apache.maven.plugins</groupId>
+		            <artifactId>maven-eclipse-plugin</artifactId>
+		            <version>2.8</version>
+		            <configuration>
+		                <additionalProjectnatures>
+		                    <projectnature>org.eclipse.jdt.groovy.core.groovyNature</projectnature>
+		                </additionalProjectnatures>
+		                <sourceIncludes>
+		                    <sourceInclude>**/*.groovy</sourceInclude>
+		                </sourceIncludes>
+		            </configuration>
+		        </plugin>
+			
 				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>

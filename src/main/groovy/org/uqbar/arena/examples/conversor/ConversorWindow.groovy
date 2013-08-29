@@ -30,11 +30,10 @@ import org.uqbar.lacar.ui.model.Action
 class ConversorWindow extends MainWindow<Conversor> {
 
 	/**
-	 * 
 	 * COMO FUNCIONA EL PROYECTO
-	 * 1) COnvert to Maven project
-	 2) maven install
-	 3) Convert to groovy project
+	 * 1) Convert to Maven project
+	 * 2) maven install
+	 * 3) Convert to groovy project
 	 */
 	ConversorWindow() {
 		super(new Conversor())
@@ -88,11 +87,11 @@ class ConversorWindow extends MainWindow<Conversor> {
 		 new Label(mainPanel).setText("Ingrese la longitud en millas")
 		 new TextBox(mainPanel).bindValueToProperty("millas")
 		 new Button(mainPanel)
-		 .setCaption("Convertir a kilómetros en Groovy")
-		 .onClick(new MessageSend(this.getModelObject(), "convertir"))
+		 	.setCaption("Convertir a kilómetros en Groovy")
+		 	.onClick(new MessageSend(this.getModelObject(), "convertir"))
 		 new Label(mainPanel)
-		 .setBackground(Color.ORANGE)
-		 .bindValueToProperty("kilometros")
+		 	.setBackground(Color.ORANGE)
+		 	.bindValueToProperty("kilometros")
 		 new Label(mainPanel).setText(" kilómetros")
 		 */
 

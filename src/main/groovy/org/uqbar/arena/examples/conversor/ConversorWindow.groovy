@@ -37,6 +37,7 @@ class ConversorWindow extends MainWindow<Conversor> {
 	 */
 	ConversorWindow() {
 		super(new Conversor())
+		title = "Conversor de millas a kilómetros"
 	}
 
 	@Override
